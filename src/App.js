@@ -12,6 +12,8 @@ function App() {
     <SplitScreen
       left = {LeftCompoonent}
       right = {RightCompoonent}
+      leftWeight = {1}
+      rightWeight = {3}
     />
   );
 }
