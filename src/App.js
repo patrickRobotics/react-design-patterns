@@ -1,17 +1,14 @@
 import { SplitScreen } from './SplitScreen';
 
-const LeftCompoonent = () => {
-  return <h1 style={{ backgroundColor: 'green' }}>Left!</h1>;
-}
-const RightCompoonent = () => {
-  return <p style={{ backgroundColor: 'red' }}>Right!</p>;
-}
+import LeftCompoonent from './components/LeftCompoonent';
+import RightCompoonent from './components/RightCompoonent';
+
 
 function App() {
   return (
     <SplitScreen leftWeight = {1} rightWeight = {3}>
-      <LeftCompoonent />
-      <RightCompoonent />
+      <LeftCompoonent name="Split Screen Component" />
+      <RightCompoonent message="React rocks" />
     </SplitScreen>
   );
 }
