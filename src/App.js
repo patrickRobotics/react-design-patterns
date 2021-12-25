@@ -1,27 +1,29 @@
-import { LargePersonListItem } from "./components/people/LargePersonListItem";
-import { SmallPersonListItem } from "./components/people/SmallPersonListItem";
+// import { LargePersonListItem } from "./components/people/LargePersonListItem";
+// import { SmallPersonListItem } from "./components/people/SmallPersonListItem";
 
-import { RegularList } from "./RegularList";
-import { NumberedList } from './NumberedList'
-import { SmallProductListItem } from "./components/products/SmallProductListItem";
+// import { RegularList } from "./components/RegularList";
+// import { NumberedList } from './components/NumberedList';
+import { Modal } from './components/Modal';
+
+// import { SmallProductListItem } from "./components/products/SmallProductListItem";
 import { LargeProductListItem } from "./components/products/LargeProductListItem";
 
-const people = [{
-	name: 'John Doe',
-	age: 54,
-	hairColor: 'brown',
-	hobbies: ['swimming', 'bicycling', 'video games'],
-}, {
-	name: 'Brenda Smith',
-	age: 33,
-	hairColor: 'black',
-	hobbies: ['golf', 'mathematics'],
-}, {
-	name: 'Jane Garcia',
-	age: 27,
-	hairColor: 'blonde',
-	hobbies: ['biology', 'medicine', 'gymnastics'],
-}];
+// const people = [{
+// 	name: 'John Doe',
+// 	age: 54,
+// 	hairColor: 'brown',
+// 	hobbies: ['swimming', 'bicycling', 'video games'],
+// }, {
+// 	name: 'Brenda Smith',
+// 	age: 33,
+// 	hairColor: 'black',
+// 	hobbies: ['golf', 'mathematics'],
+// }, {
+// 	name: 'Jane Garcia',
+// 	age: 27,
+// 	hairColor: 'blonde',
+// 	hobbies: ['biology', 'medicine', 'gymnastics'],
+// }];
 
 const products = [{
 	name: 'Flat-Screen TV',
@@ -43,26 +45,10 @@ const products = [{
 function App() {
 	return (
 		<>
-		<RegularList
-			items={people}
-			resourceName="person"
-			itemComponent={SmallPersonListItem} />
-
-		<NumberedList
-			items={people}
-			resourceName="person"
-			itemComponent={LargePersonListItem} />
-
-		<RegularList
-			items={products}
-			resourceName="product"
-			itemComponent={SmallProductListItem} />
-
-		<NumberedList
-			items={products}
-			resourceName="product"
-			itemComponent={LargeProductListItem} />
-	</>
+		<Modal>
+			<LargeProductListItem product={products[0]} />
+		</Modal>
+		</>
 	);
 }
 
