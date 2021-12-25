@@ -1,21 +1,16 @@
-// import { Modal } from './components/Modal';
-
-import { UserLoader } from "./containers/UserLoader";
+import { ResourceLoader } from "./containers/ResourceLoader";
 import { UserInfo } from "./components/people/UserInfo";
-// import { ProductInfo } from "./components/products/ProductInfo";
+import { ProductInfo } from "./components/products/ProductInfo";
 
 function App() {
 	return (
 		<>
-		<UserLoader userId='123'>
+		<ResourceLoader resourceUrl="/users/123" resourceName="user" >
 			<UserInfo />
-		</UserLoader>
-		<UserLoader userId='124'>
-			<UserInfo />
-		</UserLoader>
-		<UserLoader userId='125'>
-			<UserInfo />
-		</UserLoader>
+		</ResourceLoader>
+		<ResourceLoader resourceUrl="/products/1003" resourceName="product" >
+			<ProductInfo />
+		</ResourceLoader>
 		</>
 	);
 }
