@@ -1,14 +1,22 @@
 // import { Modal } from './components/Modal';
 
-import { CurrentUserLoader } from "./containers/CurrentUserLoader";
+import { UserLoader } from "./containers/UserLoader";
 import { UserInfo } from "./components/people/UserInfo";
 // import { ProductInfo } from "./components/products/ProductInfo";
 
 function App() {
 	return (
-		<CurrentUserLoader>
+		<>
+		<UserLoader userId='123'>
 			<UserInfo />
-		</CurrentUserLoader>
+		</UserLoader>
+		<UserLoader userId='124'>
+			<UserInfo />
+		</UserLoader>
+		<UserLoader userId='125'>
+			<UserInfo />
+		</UserLoader>
+		</>
 	);
 }
 
