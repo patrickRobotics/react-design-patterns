@@ -4,7 +4,8 @@
 // import { DataSource } from "./containers/DataSource";
 // import { UserInfo } from "./components/people/UserInfo";
 // import { ProductInfo } from "./components/products/ProductInfo";
-import { UncontrolledForm } from "./components/UncontrolledForm";
+// import { UncontrolledForm } from "./components/UncontrolledForm";
+import { ControlledForm } from "./components/ControlledForm";
 
 // const getServerData = url => async() => {
 // 	const response = await axios.get(url);
@@ -19,7 +20,8 @@ import { UncontrolledForm } from "./components/UncontrolledForm";
 
 function App() {
 	return (
-		< UncontrolledForm />
+
+		< ControlledForm />
 	);
 }
 
