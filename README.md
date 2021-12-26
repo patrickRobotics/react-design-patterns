@@ -15,4 +15,7 @@ This repository has branches for each of the videos in the course. You can use t
 
 ### Instructor
 Shaun Wassell 
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/shaun-wassell).
 
+[lil-course-url]: https://www.linkedin.com/learning/react-design-patterns
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2895130/2895130-1632416406408-16x9.jpg
