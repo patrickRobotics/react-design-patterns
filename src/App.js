@@ -1,32 +1,61 @@
-import axios from "axios";
+import { useState } from "react";
+import { ControlledOnboardingFlow } from "./components/ControlledOnboardingFlow";
 
-import { ResourceLoader } from "./containers/ResourceLoader";
-import { DataSource } from "./containers/DataSource";
-import { UserInfo } from "./components/people/UserInfo";
-import { ProductInfo } from "./components/products/ProductInfo";
-
-const getServerData = url => async() => {
-	const response = await axios.get(url);
-	return response.data;
+const StepOne = ({ goToNext }) => {
+	return(
+		<>
+		<h1>Step 1</h1>
+		<button onClick={() => goToNext({ name: 'John Doe' })}>Next</button>
+		</>
+	);
+}
+const StepTwo = ({ goToNext }) => {
+	return(
+		<>
+		<h1>Step 2</h1>
+		<button onClick={() => goToNext({ age: 69 })}>Next</button>
+		</>
+	);
+}
+const StepThree = ({ goToNext }) => {
+	return(
+		<>
+		<h1>Step 3</h1>
+		<p>Congratulations! You qualify for our senior package</p>
+		<button onClick={() => goToNext({})}>Next</button>
+		</>
+	);
+}
+const StepFour = ({ goToNext }) => {
+	return(
+		<>
+		<h1>Step 4</h1>
+		<button onClick={() => goToNext({ hairColor: 'Brown' })}>Next</button>
+		</>
+	);
 }
 
-const getDataFromLocalStorage = key => () => {
-	return localStorage.getItem(key);
-}
 
-const Text = ({ message }) => <h1>{ message }</h1>;
 
 function App() {
-	return (
-		<>
-		<DataSource getDataFunc={ getServerData('/users/123') } resourceName="user">
-			<UserInfo />
-		</DataSource>
+	const [onBoardingData, setOnBoardingData] = useState({});
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-		<DataSource getDataFunc={ getDataFromLocalStorage('message') } resourceName="message">
-			<Text />
-		</DataSource>
-		</>
+	const onNext = stepData => {
+		setOnBoardingData({ ...onBoardingData, ...stepData});
+        setCurrentIndex(currentIndex + 1);
+    }
+
+	return (
+		<ControlledOnboardingFlow
+			currentIndex = {currentIndex}
+			onNext = {onNext}
+		>
+			<StepOne />
+			<StepTwo />
+			{onBoardingData.age > 60 && <StepThree />}
+			<StepFour />
+		</ControlledOnboardingFlow>
 	);
 }
 
