@@ -1,12 +1,12 @@
 import { UserInfo } from "./components/people/UserInfo";
-import { printProps } from "./components/printProps";
+import { withUser } from './components/people/withUser';
 
 
-const UserInfoWrapped = printProps(UserInfo);
+const UserInfoWithLoader = withUser(UserInfo, '124');
 
 function App() {
 	return (
-		<UserInfoWrapped a={1} b="Hello" c={{ name: 'Shaun' }} />
+		<UserInfoWithLoader a={1} b="Hello" c={{ name: 'Shaun' }} />
 	);
 }
 
