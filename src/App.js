@@ -1,12 +1,9 @@
-import { UserInfo } from "./components/people/UserInfo";
-import { withUser } from './components/people/withUser';
+import { UserInfoForm} from './components/people/UserInfoForm';
 
-
-const UserInfoWithLoader = withUser(UserInfo, '124');
 
 function App() {
 	return (
-		<UserInfoWithLoader a={1} b="Hello" c={{ name: 'Shaun' }} />
+		<UserInfoForm />
 	);
 }
 
