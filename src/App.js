@@ -1,4 +1,5 @@
-import { UncontrolledOnboardingFlow } from "./components/UncontrolledOnboardingFlow";
+import { useState } from "react";
+import { ControlledOnboardingFlow } from "./components/ControlledOnboardingFlow";
 
 const StepOne = ({ goToNext }) => {
 	return(
@@ -12,7 +13,7 @@ const StepTwo = ({ goToNext }) => {
 	return(
 		<>
 		<h1>Step 2</h1>
-		<button onClick={() => goToNext({ age: 19 })}>Next</button>
+		<button onClick={() => goToNext({ age: 69 })}>Next</button>
 		</>
 	);
 }
@@ -20,22 +21,41 @@ const StepThree = ({ goToNext }) => {
 	return(
 		<>
 		<h1>Step 3</h1>
+		<p>Congratulations! You qualify for our senior package</p>
+		<button onClick={() => goToNext({})}>Next</button>
+		</>
+	);
+}
+const StepFour = ({ goToNext }) => {
+	return(
+		<>
+		<h1>Step 4</h1>
 		<button onClick={() => goToNext({ hairColor: 'Brown' })}>Next</button>
 		</>
 	);
 }
 
 
+
 function App() {
+	const [onBoardingData, setOnBoardingData] = useState({});
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+	const onNext = stepData => {
+		setOnBoardingData({ ...onBoardingData, ...stepData});
+        setCurrentIndex(currentIndex + 1);
+    }
+
 	return (
-		<UncontrolledOnboardingFlow onFinish={data => {
-			console.log(data);
-		 	alert('Onboarding completed!');
-		}}>
+		<ControlledOnboardingFlow
+			currentIndex = {currentIndex}
+			onNext = {onNext}
+		>
 			<StepOne />
 			<StepTwo />
-			<StepThree />
-		</UncontrolledOnboardingFlow>
+			{onBoardingData.age > 60 && <StepThree />}
+			<StepFour />
+		</ControlledOnboardingFlow>
 	);
 }
 
