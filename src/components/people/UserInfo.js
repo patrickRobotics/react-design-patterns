@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { useDataSource } from '../../useDataSource';
+import { useDataSource } from '../../hooks/useDataSource';
 
 const serverResource = resourceUrl => async () => {
     const response = await axios.get(resourceUrl);

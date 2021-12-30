@@ -1,4 +1,4 @@
-import { useResource } from '../../useResource';
+import { useResource } from '../../hooks/useResource';
 
 export const ProductInfo = ({ productId }) => {
     const product = useResource(`/products/${productId}`);
