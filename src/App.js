@@ -1,13 +1,30 @@
-import { UserInfo} from './components/people/UserInfo';
-import {ProductInfo} from './components/products/ProductInfo';
+import { RecursiveComponent } from './components/RecursiveComponent';
 
+const nestedObject = {
+	a: 1,
+	b: {
+		b1: 4,
+		b2: {
+			b23: 'Hello',
+		},
+		b3: {
+			b31: {
+				message: 'Hi',
+			},
+			b32: {
+				message: 'Hi',
+			}
+		}
+	},
+	c: {
+		c1: 2,
+		c2: 3,
+	}
+}
 
 function App() {
 	return (
-		<>
-		<UserInfo userId="123" />
-		<ProductInfo productId="1003" />
-		</>
+		<RecursiveComponent data={nestedObject} />
 	);
 }
 
