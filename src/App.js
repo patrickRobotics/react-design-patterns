@@ -1,4 +1,4 @@
-import { DangerButton, BigSuccessButton } from './components/composition';
+import { DangerButton, BigSuccessButton } from './components/partiallyApply';
 
 
 function App() {
