@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 export const useCurrentUser = () => {
@@ -12,3 +13,8 @@ export const useCurrentUser = () => {
 
     return user;
 }
+
+/**
+ * The component that uses this custom hook will look like
+ * const currentUser = useCurrentUser();
+ */
