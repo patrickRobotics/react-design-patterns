@@ -1,12 +1,12 @@
 import { UserInfo} from './components/people/UserInfo';
+import {ProductInfo} from './components/products/ProductInfo';
 
 
 function App() {
 	return (
 		<>
 		<UserInfo userId="123" />
-		<UserInfo userId="124" />
-		<UserInfo userId="125" />
+		<ProductInfo productId="1003" />
 		</>
 	);
 }

@@ -16,5 +16,5 @@ export const useUser = userId => {
 
 /**
  * The component that uses this custom hook will look like
- * const currentUser = useCurrentUser();
+ * const currentUser = useUser();
  */
