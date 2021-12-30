@@ -3,7 +3,11 @@ import { UserInfo} from './components/people/UserInfo';
 
 function App() {
 	return (
-		<UserInfo />
+		<>
+		<UserInfo userId="123" />
+		<UserInfo userId="124" />
+		<UserInfo userId="125" />
+		</>
 	);
 }
 
